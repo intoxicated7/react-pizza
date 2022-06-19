@@ -49,10 +49,10 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({ item }) => {
                       <h2 className="text-lg">{item.title}</h2>
                       <ul className="bg-zinc-300 rounded-3xl flex  text-sm ">
                         {
-                        item.types.map(typeId => (
+                        item.types.map((typeId, i) => (
                           <div className="px-1 py-1 cursor-pointer flex-1 text-center">
                             <li
-                              key={typeId}
+                              key={i}
                               onClick={() => setActiveType(typeId)}
                               className={activeType === typeId ? 'bg-zinc-100 rounded-3xl w-full' : ''}
                             >{typeNames[typeId]}</li>
@@ -65,7 +65,7 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({ item }) => {
                           item.sizes.map((size, i) => (
                           <div className="px-1 py-1 cursor-pointer text-center flex-1">
                             <li
-                              key={size}
+                              key={i}
                               onClick={() => setActiveSize(i)}
                               className={activeSize === i ? 'bg-zinc-100  rounded-3xl' : ''}
                             >{size} см.</li>

@@ -53,7 +53,7 @@ const Products = (): JSX.Element => {
       <div className="grid grid-cols-4 gap-8 mt-8">
         {
           isLoading ? [...new Array(8)].map(() => <Skeleton />) : items?.map(item => (
-              <PizzaBlock    
+              <PizzaBlock 
                 item={item}     
               />
           ))
